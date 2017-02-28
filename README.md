@@ -43,6 +43,19 @@ Hi, 欢迎来到 ElemeFE, 如标题所示本教程的目的是教你如何通过
 * [`[Basic]` 热更新](https://github.com/ElemeFE/node-interview/blob/master/sections/module.md#热更新)
 * [`[Basic]` 上下文](https://github.com/ElemeFE/node-interview/blob/master/sections/module.md#上下文)
 
+### 热更新
+分为三个层面的事：
+
+* 代码层面： require cache 来实现
+* 框架层面：主要观注点：（1）处理旧的流量，处理完成后退出，（2）不再进入新的流量，（3）新建进程，（4）新流量进入新的进程
+* 架构层面：使用反向代理来实现：（1）tcp 实现，（2）http实现，（3）DNS实现。主要从代理中摘除老的代码机，更新完成后，加入新的代码机。
+
+相关链接：
+
+* [Node.js Web应用代码热更新的另类思路](http://fex.baidu.com/blog/2015/05/nodejs-hot-swapping/)
+* [NodeJS Web 服务平滑升级](http://frontenddev.org/link/nodejs-web-service-smooth-upgrade.html)
+* [nodejs中正确关闭http server的方法](http://www.html-js.com/article/The-correct-method-of-HTTP-server-nodejs-scrap-off-in-nodejs)
+
 ### 常见问题
 
 * a.js 和 b.js 两个文件互相 require 是否会死循环? 双方是否能导出变量? 如何从设计上避免这种问题? [[more]](https://github.com/ElemeFE/node-interview/blob/master/sections/module.md#q-loop)
